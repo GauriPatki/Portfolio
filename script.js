@@ -76,3 +76,45 @@ const consoleObserver = new IntersectionObserver((entries) => {
 
 const consoleEl = document.querySelector('.console');
 if (consoleEl) consoleObserver.observe(consoleEl);
+
+// Generic scroll-reveal for cards, timeline items, publication rows
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('in-view'), i * 60);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => revealObserver.observe(el));
+
+// Timeline progress line — fills as the timeline scrolls through the viewport
+const timelineEl = document.querySelector('.timeline');
+const timelineFill = document.getElementById('timelineFill');
+
+function updateTimelineFill() {
+  if (!timelineEl || !timelineFill) return;
+  const rect = timelineEl.getBoundingClientRect();
+  const viewportH = window.innerHeight;
+  const total = rect.height;
+
+  // How much of the timeline has scrolled past the viewport's vertical center
+  const scrolled = (viewportH * 0.6) - rect.top;
+  const progress = Math.max(0, Math.min(1, scrolled / total));
+
+  timelineFill.style.height = (progress * 100) + '%';
+}
+
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      updateTimelineFill();
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+window.addEventListener('resize', updateTimelineFill);
+updateTimelineFill();
