@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gauri Patki — AI/ML Engineer & Data Scientist</title>
+<meta name="description" content="Gauri Patki — Data Scientist & ML Engineer. RAG systems, LLM evaluation, NLP, and applied ML.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-orbs" aria-hidden="true">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">GP<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#console">Console</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top" class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow mono">STATUS: OPEN TO WORK &nbsp;•&nbsp; F-1 OPT (STEM, 3-YR)</p>
+    <h1 class="hero-title">
+      Building systems that know<br>
+      when they're <span class="grad-text">wrong.</span>
+    </h1>
+    <p class="hero-sub">
+      Gauri Patki — Data Scientist & ML Engineer focused on LLM evaluation, retrieval-augmented
+      generation, and applied NLP. M.S. Data Science, UW–Madison. Two peer-reviewed publications.
+    </p>
+    <div class="hero-cta">
+      <a href="#console" class="btn btn-primary">Run the eval console →</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num mono" data-count="591">0</span><span class="stat-suffix mono">%</span>
+        <span class="stat-label">Hit@1 on temporal RAG<br>(up from 40.4%)</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num mono" data-count="97">0</span><span class="stat-suffix mono">.4%</span>
+        <span class="stat-label">Classification accuracy<br>15,185 microscopy images</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num mono">$</span><span class="stat-num mono" data-count="668">0</span><span class="stat-suffix mono">K</span>
+        <span class="stat-label">OR scheduling cost<br>down from $1.26M</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="about" class="section">
+    <div class="section-inner">
+      <p class="eyebrow mono">// ABOUT</p>
+      <div class="about-grid">
+        <p class="about-text">
+          I'm a recent M.S. Data Science graduate from UW–Madison, with a B.E. in AI & Data Science
+          from Savitribai Phule Pune University (Silver Medalist, 9.31/10). My work sits at the
+          intersection of <strong>LLM evaluation</strong>, <strong>retrieval systems</strong>, and
+          <strong>experimental design</strong> — I don't just build models, I stress-test them:
+          finding failure modes, defining success metrics, and measuring what actually moved.
+        </p>
+        <p class="about-text">
+          I've shipped a production RAG pipeline (85% summarization accuracy, 80% retrieval accuracy),
+          published two peer-reviewed papers on it, and spent my graduate research improving temporal
+          retrieval — pushing Hit@1 from 0.404 to 0.591 through hard-negative mining and re-ranking.
+          I'm looking for entry-level roles in <strong>ML Engineering, Data Science, AI/NLP, or Data
+          Engineering</strong> — anywhere I can keep asking "how do we know this is actually working?"
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="console" class="section console-section">
+    <div class="section-inner">
+      <p class="eyebrow mono">// SIGNATURE — INTERACTIVE</p>
+      <h2 class="section-title">The Eval Console</h2>
+      <p class="section-lede">
+        Every project below shipped with a before/after metric — because a model you can't measure
+        is a model you can't trust. Pick one.
+      </p>
+
+      <div class="console">
+        <div class="console-tabs" id="consoleTabs">
+          <button class="console-tab active" data-target="rag">temporal_rag.py</button>
+          <button class="console-tab" data-target="vision">sediment_cv.py</button>
+          <button class="console-tab" data-target="or">or_scheduling.gms</button>
+          <button class="console-tab" data-target="reg">ybi_regression.py</button>
+        </div>
+
+        <div class="console-body">
+          <div class="console-panel active" data-panel="rag">
+            <div class="console-line mono"><span class="prompt">$</span> evaluate --model contriever-finetuned --dataset ChroniclingAmericaQA</div>
+            <p class="console-desc">Time-aware retriever for RAG. Fine-tuned Contriever with temporal hard negatives + sliding-window MaxSim re-ranking, so the model stops treating "in 1995" and "in 2015" as similar just because the sentence around them is.</p>
+            <div class="metric-row">
+              <div class="metric-card">
+                <span class="metric-label">Hit@1</span>
+                <div class="metric-bar"><div class="metric-fill" data-before="40" data-after="59"></div></div>
+                <span class="metric-vals mono"><span class="before">0.404</span> → <span class="after">0.591</span></span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">MRR</span>
+                <div class="metric-bar"><div class="metric-fill" data-before="48" data-after="66"></div></div>
+                <span class="metric-vals mono"><span class="before">0.477</span> → <span class="after">0.661</span></span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">Hit@1 (T5 synthetic, time-sensitive)</span>
+                <div class="metric-bar"><div class="metric-fill" data-before="0" data-after="85"></div></div>
+                <span class="metric-vals mono"><span class="before">—</span> → <span class="after">0.849</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="console-panel" data-panel="vision">
+            <div class="console-line mono"><span class="prompt">$</span> benchmark --models yolov8,cnn,detectron2 --classes 7</div>
+            <p class="console-desc">Urinary sediment particle classification across 15,185 microscopic images. Benchmarked YOLOv8, CNN, and Detectron2 with class balancing and preprocessing sensitivity analysis to find what actually held up at production accuracy.</p>
+            <div class="metric-row">
+              <div class="metric-card wide">
+                <span class="metric-label">Final classification accuracy</span>
+                <div class="metric-bar"><div class="metric-fill" data-before="0" data-after="97"></div></div>
+                <span class="metric-vals mono"><span class="before">baseline</span> → <span class="after">97.4%</span></span>
+              </div>
+              <div class="metric-card wide">
+                <span class="metric-label">Dataset scale</span>
+                <span class="metric-vals mono" style="margin-top:8px;">15,185 images · 7 particle types</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="console-panel" data-panel="or">
+            <div class="console-line mono"><span class="prompt">$</span> solve --model two-stage-stochastic-mip --scenarios 7 --solver cplex</div>
+            <p class="console-desc">Hospital OR scheduling under uncertainty. Two-stage stochastic MIP in GAMSPy, solved with CPLEX across 7 scenarios, compared against a deterministic baseline.</p>
+            <div class="metric-row">
+              <div class="metric-card wide">
+                <span class="metric-label">Scheduling cost (vs. deterministic baseline)</span>
+                <div class="metric-bar"><div class="metric-fill" data-before="100" data-after="53"></div></div>
+                <span class="metric-vals mono"><span class="before">$1.26M</span> → <span class="after">$668K</span> (–47%)</span>
+              </div>
+              <div class="metric-card wide">
+                <span class="metric-label">Value of Stochastic Solution (VSS)</span>
+                <span class="metric-vals mono" style="margin-top:8px;">$591K impact communicated to stakeholders</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="console-panel" data-panel="reg">
+            <div class="console-line mono"><span class="prompt">$</span> train --models linreg,bagging,boosting --metric r2</div>
+            <p class="console-desc">EDA + feature engineering on a 1,030-sample dataset at YBI Foundation. Compared linear regression against bagging and boosting ensembles, tracked with MAE, MSE, and MAPE.</p>
+            <div class="metric-row">
+              <div class="metric-card wide">
+                <span class="metric-label">R² score</span>
+                <div class="metric-bar"><div class="metric-fill" data-before="28" data-after="42"></div></div>
+                <span class="metric-vals mono"><span class="before">0.28</span> → <span class="after">0.42</span> (+50%)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="section-inner">
+      <p class="eyebrow mono">// PROJECTS</p>
+      <h2 class="section-title">Selected work</h2>
+
+      <div class="project-grid">
+        <article class="project-card featured">
+          <div class="project-top">
+            <h3>Time-Aware Retriever for RAG Systems</h3>
+            <span class="project-date mono">Sep–Dec 2025</span>
+          </div>
+          <p>Designed and fine-tuned a time-aware LLM retrieval pipeline using Contriever with temporal hard negatives and sliding-window MaxSim MRAG re-ranking. Evaluated behavior and failure modes on ChroniclingAmericaQA.</p>
+          <div class="tag-row">
+            <span class="tag">Contriever</span><span class="tag">FAISS</span><span class="tag">RAG</span><span class="tag">T5</span><span class="tag">PyTorch</span>
+          </div>
+          <a href="https://github.com/GauriPatki" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Urinary Sediment Particle Classification</h3>
+            <span class="project-date mono">Feb–May 2025</span>
+          </div>
+          <p>Benchmarked YOLOv8, CNN, and Detectron2 across 15,185 microscopic images spanning 7 particle types. 97.4% accuracy at production-deployment standard.</p>
+          <div class="tag-row">
+            <span class="tag">YOLOv8</span><span class="tag">Detectron2</span><span class="tag">CV</span>
+          </div>
+          <a href="https://github.com/GauriPatki" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Hospital OR Scheduling — Stochastic Optimization</h3>
+            <span class="project-date mono">Sep–Dec 2024</span>
+          </div>
+          <p>Two-stage stochastic MIP model in GAMSPy with CPLEX across 7 scenarios. Reduced scheduling costs 47% vs. deterministic baseline; VSS of $591K.</p>
+          <div class="tag-row">
+            <span class="tag">GAMSPy</span><span class="tag">CPLEX</span><span class="tag">Optimization</span>
+          </div>
+          <a href="https://github.com/GauriPatki" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Business Data Integration & Analytics</h3>
+            <span class="project-date mono">Jul–Aug 2025</span>
+          </div>
+          <p>End-to-end pipeline integrating 6 datasets (100,000+ records) using SQL and PostgreSQL, with KPI dashboards built in Google Looker Studio.</p>
+          <div class="tag-row">
+            <span class="tag">SQL</span><span class="tag">PostgreSQL</span><span class="tag">Looker Studio</span>
+          </div>
+          <a href="https://github.com/GauriPatki" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Smart Script Solutions (RAG + LLM App)</h3>
+            <span class="project-date mono">Jul 2023–Mar 2024</span>
+          </div>
+          <p>Production Streamlit app: RoBERTa for QA, MiniLM for semantic search/summarization, ASR + YouTube Data API + FAISS retrieval. 85% summarization accuracy, 80% retrieval accuracy. Published in IJCRT & IJRAR.</p>
+          <div class="tag-row">
+            <span class="tag">RoBERTa</span><span class="tag">MiniLM</span><span class="tag">Streamlit</span><span class="tag">FAISS</span>
+          </div>
+          <a href="https://github.com/GauriPatki" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="section-inner">
+      <p class="eyebrow mono">// EXPERIENCE</p>
+      <h2 class="section-title">Where I've worked</h2>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-head">
+              <h3>ML Developer <span class="tl-org">— AI Adventures LLP</span></h3>
+              <span class="mono tl-date">Jul 2023 – Mar 2024</span>
+            </div>
+            <ul>
+              <li>Built Smart Script Solutions using RoBERTa (QA) and MiniLM (semantic search/summarization); evaluated LLM outputs across accuracy, failure modes, and summarization quality (85%).</li>
+              <li>Designed end-to-end RAG pipeline integrating ASR, YouTube Data API, FAISS retrieval, and Sentence Transformer scoring; deployed to production (80% retrieval accuracy); published findings in two peer-reviewed journals.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-head">
+              <h3>ML & BI Intern <span class="tl-org">— YBI Foundation</span></h3>
+              <span class="mono tl-date">Feb – Mar 2023</span>
+            </div>
+            <ul>
+              <li>Performed EDA and feature engineering on a 1,030-sample dataset; improved R² from 0.28 to 0.42 (50% gain) via regression, bagging, and boosting models.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-head">
+              <h3>Data Science Intern <span class="tl-org">— Oasis Infobyte</span></h3>
+              <span class="mono tl-date">Feb – Mar 2023</span>
+            </div>
+            <ul>
+              <li>Benchmarked KNN, SVR, OLS, and Decision Tree models on sales forecasting and unemployment data, achieving R² of 0.59.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="section-inner">
+      <p class="eyebrow mono">// SKILLS</p>
+      <h2 class="section-title">Stack</h2>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <h4>LLM & NLP</h4>
+          <div class="chip-row">
+            <span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">HuggingFace</span>
+            <span class="chip">RAG</span><span class="chip">Prompt Engineering</span><span class="chip">BERT/RoBERTa/T5</span>
+            <span class="chip">FAISS</span><span class="chip">Contriever</span><span class="chip">DPR</span>
+            <span class="chip">Sentence Transformers</span><span class="chip">LLM Eval & Failure Analysis</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h4>ML & Statistics</h4>
+          <div class="chip-row">
+            <span class="chip">Scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span>
+            <span class="chip">Regression</span><span class="chip">Classification</span><span class="chip">Experimental Design</span>
+            <span class="chip">A/B Testing</span><span class="chip">Model Validation</span><span class="chip">EDA</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h4>Engineering & Cloud</h4>
+          <div class="chip-row">
+            <span class="chip">Docker</span><span class="chip">Git</span><span class="chip">Linux</span>
+            <span class="chip">Shell Scripting</span><span class="chip">FastAPI</span><span class="chip">Apache Spark</span>
+            <span class="chip">Kafka</span><span class="chip">Google BigQuery</span><span class="chip">AWS</span><span class="chip">CI/CD</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h4>Data & Tools</h4>
+          <div class="chip-row">
+            <span class="chip">SQL</span><span class="chip">PostgreSQL</span><span class="chip">MySQL</span>
+            <span class="chip">MongoDB</span><span class="chip">Tableau</span><span class="chip">Power BI</span>
+            <span class="chip">Looker Studio</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="eyebrow mono">// PUBLICATIONS</p>
+      <h2 class="section-title">Peer-reviewed</h2>
+      <div class="pub-list">
+        <a class="pub-item" href="https://ijrar.org/papers/IJRAR24B2613.pdf" target="_blank" rel="noopener">
+          <span class="pub-name">Smart Script Solutions — Research Paper</span>
+          <span class="pub-meta mono">IJRAR · Apr 2024 ↗</span>
+        </a>
+        <a class="pub-item" href="https://ijcrt.org/papers/IJCRT2404318.pdf" target="_blank" rel="noopener">
+          <span class="pub-name">Smart Script Solutions — Review Paper</span>
+          <span class="pub-meta mono">IJCRT · Apr 2024 ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section">
+    <div class="section-inner">
+      <p class="eyebrow mono">// CONTACT</p>
+      <h2 class="section-title">Let's talk</h2>
+      <p class="section-lede">
+        Open to entry-level roles in ML Engineering, Data Science, AI/NLP, and Data Engineering.
+        Authorized to work in the U.S. on F-1 OPT (STEM-eligible, 3-year).
+      </p>
+      <div class="contact-links">
+        <a href="mailto:patkigauri30@gmail.com" class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-val mono">patkigauri30@gmail.com</span>
+        </a>
+        <a href="tel:+16082363087" class="contact-item">
+          <span class="contact-label">Phone</span>
+          <span class="contact-val mono">+1 (608) 236-3087</span>
+        </a>
+        <a href="https://www.linkedin.com/in/gauri-patki-8985b221a/" target="_blank" rel="noopener" class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-val mono">/in/gauri-patki</span>
+        </a>
+        <a href="https://github.com/GauriPatki" target="_blank" rel="noopener" class="contact-item">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-val mono">GauriPatki</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p class="mono">Madison, WI · Built & deployed via Vercel/GitHub CI</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
