@@ -27,10 +27,12 @@
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#console">Console</a>
+      <a href="#search">Search</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#contact" class="nav-cta">Contact</a>
+      <button id="cmdTrigger" class="cmd-trigger mono" aria-label="Open command palette">⌘K</button>
     </div>
   </div>
 </nav>
@@ -134,6 +136,8 @@
       </div>
     </div>
   </section>
+
+  <section id="console" class="section console-section">
     <div class="section-inner">
       <p class="eyebrow mono">// SIGNATURE — INTERACTIVE</p>
       <h2 class="section-title">The Eval Console</h2>
@@ -218,6 +222,25 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="search" class="section search-section">
+    <div class="section-inner">
+      <p class="eyebrow mono">// LIVE DEMO — RUNS IN YOUR BROWSER</p>
+      <h2 class="section-title">Search my work</h2>
+      <p class="section-lede">
+        A real (tiny) retrieval engine — TF-IDF vectorization + cosine similarity, computed
+        client-side, ranking real sentences from my projects, experience, and skills.
+        No backend, no API calls. Try "RAG evaluation" or "optimization under uncertainty."
+      </p>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input mono" placeholder="e.g. who has experience with LLM evaluation?" autocomplete="off">
+        <button id="searchBtn" class="btn btn-primary search-btn">Search →</button>
+      </div>
+
+      <div id="searchResults" class="search-results"></div>
     </div>
   </section>
 
@@ -432,7 +455,7 @@
     </div>
   </section>
 
-  <section class="section notebook-section">
+  <section id="research" class="section notebook-section">
     <div class="section-inner">
       <p class="eyebrow mono">// RESEARCH</p>
       <h2 class="section-title">Peer-reviewed publications</h2>
@@ -506,6 +529,14 @@
 <footer class="footer">
   <p class="mono">Madison, WI · Built & deployed via Vercel/GitHub CI</p>
 </footer>
+
+<div id="cmdPalette" class="cmd-palette-overlay">
+  <div class="cmd-palette">
+    <input type="text" id="cmdInput" class="cmd-input mono" placeholder="Jump to a section... (Esc to close)" autocomplete="off">
+    <div id="cmdList" class="cmd-list"></div>
+    <div class="cmd-hint mono">↑↓ navigate · ↵ select · esc close</div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
