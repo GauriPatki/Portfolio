@@ -7,10 +7,12 @@
 <meta name="description" content="Gauri Patki — Data Scientist & ML Engineer. RAG systems, LLM evaluation, NLP, and applied ML.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <div class="bg-orbs" aria-hidden="true">
   <div class="orb orb-1"></div>
@@ -23,6 +25,7 @@
     <a href="#top" class="nav-logo">GP<span class="dot">.</span></a>
     <div class="nav-links">
       <a href="#about">About</a>
+      <a href="#education">Education</a>
       <a href="#console">Console</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
@@ -96,7 +99,41 @@
     </div>
   </section>
 
-  <section id="console" class="section console-section">
+  <section id="education" class="section">
+    <div class="section-inner">
+      <p class="eyebrow mono">// EDUCATION</p>
+      <h2 class="section-title">Where I studied</h2>
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-logo-badge">
+            <img src="uw-logo.png" alt="University of Wisconsin–Madison logo">
+          </div>
+          <div class="edu-info">
+            <h3>M.S. Data Science</h3>
+            <p class="edu-school">University of Wisconsin–Madison</p>
+            <div class="edu-meta">
+              <span class="mono">Sep 2024 – May 2026</span>
+              <span class="edu-gpa mono">GPA 3.65 / 4.0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card reveal">
+          <div class="edu-logo-badge">
+            <img src="sppu-logo.png" alt="Savitribai Phule Pune University logo">
+          </div>
+          <div class="edu-info">
+            <h3>B.E. Artificial Intelligence & Data Science</h3>
+            <p class="edu-school">Savitribai Phule Pune University</p>
+            <div class="edu-meta">
+              <span class="mono">Sep 2020 – Jun 2024</span>
+              <span class="edu-gpa mono">GPA 9.31 / 10 — Silver Medalist</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
     <div class="section-inner">
       <p class="eyebrow mono">// SIGNATURE — INTERACTIVE</p>
       <h2 class="section-title">The Eval Console</h2>
@@ -395,25 +432,34 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section notebook-section">
     <div class="section-inner">
-      <p class="eyebrow mono">// PUBLICATIONS</p>
-      <h2 class="section-title">Peer-reviewed</h2>
-      <div class="pub-list">
-        <a class="pub-item reveal" href="https://ijrar.org/papers/IJRAR24B2613.pdf" target="_blank" rel="noopener">
-          <img src="IJRAR.png" alt="IJRAR paper preview" class="pub-thumb">
-          <span class="pub-text">
-            <span class="pub-name">Smart Script Solutions — Research Paper</span>
-            <span class="pub-meta mono">IJRAR · Apr 2024 ↗</span>
-          </span>
-        </a>
-        <a class="pub-item reveal" href="https://ijcrt.org/papers/IJCRT2404318.pdf" target="_blank" rel="noopener">
-          <img src="IJCRT.png" alt="IJCRT paper preview" class="pub-thumb">
-          <span class="pub-text">
-            <span class="pub-name">Smart Script Solutions — Review Paper</span>
-            <span class="pub-meta mono">IJCRT · Apr 2024 ↗</span>
-          </span>
-        </a>
+      <p class="eyebrow mono">// RESEARCH</p>
+      <h2 class="section-title">Peer-reviewed publications</h2>
+      <p class="section-lede">Same underlying system, Smart Script Solutions — written up for two venues in the same month.</p>
+
+      <div class="pinboard">
+        <div class="pin-card tilt-left reveal">
+          <span class="pin-tape"></span>
+          <img src="IJRAR.png" alt="IJRAR paper preview" class="pin-thumb">
+          <h3 class="pin-title">Smart Script Solutions</h3>
+          <p class="pin-venue mono">IJRAR · Research Paper · Apr 2024</p>
+          <p class="pin-note">Written up while still an undergrad in Pune — <mark>the retrieval + QA pipeline behind the deployed app.</mark></p>
+          <a href="https://ijrar.org/papers/IJRAR24B2613.pdf" target="_blank" rel="noopener" class="pin-link">Read the paper ↗</a>
+        </div>
+
+        <div class="pin-card tilt-right reveal">
+          <span class="pin-tape"></span>
+          <img src="IJCRT.png" alt="IJCRT paper preview" class="pin-thumb">
+          <h3 class="pin-title">Smart Script Solutions</h3>
+          <p class="pin-venue mono">IJCRT · Review Paper · Apr 2024</p>
+          <p class="pin-note">Companion paper — <mark>same system, evaluation methodology framed for a review audience.</mark></p>
+          <a href="https://ijcrt.org/papers/IJCRT2404318.pdf" target="_blank" rel="noopener" class="pin-link">Read the paper ↗</a>
+        </div>
+
+        <div class="sticky-note tilt-left reveal">
+          <p>2 papers.<br>1 project.<br><span class="sticky-underline">Same eval, two audiences.</span></p>
+        </div>
       </div>
     </div>
   </section>
